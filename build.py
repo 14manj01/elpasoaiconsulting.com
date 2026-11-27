@@ -41,6 +41,7 @@ TEXT = {
             ("Automation", "/ai-automation-el-paso.html"),
             ("Chatbots", "/ai-chatbot-receptionist-el-paso.html"),
             ("Training", "/ai-training-el-paso.html"),
+            ("Examples", "/ai-use-cases-el-paso.html"),
             ("About", "/about.html"),
             ("Español", "/es/"),
         ],
@@ -56,6 +57,7 @@ TEXT = {
         "foot_company": "Company",
         "foot_company_links": [
             ("About James Mann, Ph.D.", "/about.html"),
+            ("Examples and use cases", "/ai-use-cases-el-paso.html"),
             ("Book a consultation", "/contact.html"),
             ("En español", "/es/"),
         ],
@@ -106,6 +108,9 @@ ICONS = {
     "chart": '<path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',
     "spark": '<path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="m18.5 16 .6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6z"/>',
     "tag": '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/>',
+    "agent": '<rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 8V4.5M9.5 13h.01M14.5 13h.01M3 13h2M19 13h2"/><circle cx="12" cy="3.5" r="1"/>',
+    "dots": '<circle cx="5.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="18.5" cy="12" r="2.2"/>',
+    "duet": '<circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/>',
 }
 
 SKYLINE = """<div class="skyline reveal" role="img" aria-label="{label}">
@@ -154,8 +159,24 @@ def icon(name):
     )
 
 
+def row_sizes(count):
+    """Lay tiles out in rows of two wide or three regular tiles, never leaving one alone."""
+    sizes = []
+    while count:
+        size = min((2, 3, 3)[len(sizes) % 3], count)
+        if count - size == 1:
+            size = 3 if size == 2 else 2
+        sizes.append(size)
+        count -= size
+    return sizes
+
+
 def services_grid(services, lang):
-    wide = {0, 1, len(services) - 2, len(services) - 1}
+    wide, start = set(), 0
+    for size in row_sizes(len(services)):
+        if size < 3:
+            wide.update(range(start, start + size))
+        start += size
     tiles = []
     for i, page in enumerate(services):
         card = page["card_es"] if lang == "es" else page["card"]
@@ -309,12 +330,27 @@ def render(page, services):
         .replace("{{book}}", BOOK)
     )
 
+    # Generated sections continue the light/grey alternation of the page body.
+    body_sections = re.findall(r'<section class="section( alt)?"', body)
+    next_alt = bool(body_sections) and body_sections[-1] == ""
+
+    examples = ""
+    if page.get("examples"):
+        cards = "".join(f'<article class="card"><h3>{title}</h3><p>{text}</p></article>' for title, text in page["examples"])
+        examples = (
+            f'<section class="section{" alt" if next_alt else ""}" id="examples"><div class="wrap">'
+            '<div class="section-head reveal"><h2>Examples.</h2>'
+            '<p>Illustrative setups that show what is possible. They are not client results.</p></div>'
+            f'<div class="cards reveal">{cards}</div></div></section>'
+        )
+        next_alt = not next_alt
+
     faq = ""
     if page.get("faq"):
         items = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in page["faq"])
         anchor = "preguntas" if lang == "es" else "faq"
         faq = (
-            f'<section class="section" id="{anchor}"><div class="wrap">'
+            f'<section class="section{" alt" if next_alt else ""}" id="{anchor}"><div class="wrap">'
             f'<div class="section-head reveal"><h2>{t["faq_title"]}</h2></div>'
             f'<div class="faq reveal">{items}</div></div></section>'
         )
@@ -380,6 +416,7 @@ def render(page, services):
 </div>
 </section>
 {body}
+{examples}
 {faq}
 {cta}
 </main>
