@@ -37,22 +37,22 @@ TEXT = {
         "skip": "Skip to content",
         "menu": "Menu",
         "nav": [
+            ("Training", "/ai-training-el-paso.html"),
             ("Invoices", "/invoice-automation-el-paso.html"),
-            ("Websites", "/website-design-el-paso.html"),
-            ("IT support", "/it-support-el-paso.html"),
+            ("Phones", "/ai-chatbot-receptionist-el-paso.html"),
+            ("Websites", "/build-a-website-with-ai.html"),
+            ("IT help", "/ai-for-it-help.html"),
             ("AI agents", "/ai-agent-setup-el-paso.html"),
             ("Restaurants", "/ai-for-restaurants-el-paso.html"),
-            ("Examples", "/ai-use-cases-el-paso.html"),
-            ("About", "/about.html"),
             ("Español", "/es/"),
         ],
         "points": [
-            ("Invoices chased", "/invoice-automation-el-paso.html"),
-            ("Phones answered", "/ai-chatbot-receptionist-el-paso.html"),
-            ("Websites built", "/website-design-el-paso.html"),
-            ("IT fixed", "/it-support-el-paso.html"),
+            ("AI for invoices", "/invoice-automation-el-paso.html"),
+            ("AI for phones", "/ai-chatbot-receptionist-el-paso.html"),
+            ("AI for your website", "/build-a-website-with-ai.html"),
+            ("AI for IT help", "/ai-for-it-help.html"),
         ],
-        "hero_more": ("See everything I can automate", "/what-can-ai-automate.html"),
+        "hero_more": ("See 65 things AI can do", "/what-can-ai-automate.html"),
         "demo": {
             "label": "Examples of messages from an AI agent to a business owner",
             "name": "Your AI agent",
@@ -117,13 +117,13 @@ TEXT = {
         ],
         "book": "Book a free consultation",
         "book_short": "Book a free consult",
-        "all_services": ("All services", "/#services"),
+        "all_services": ("All training", "/#services"),
         "learn": "Learn more",
         "faq_title": "Questions, answered.",
         "cta_title": "Start with a free consultation.",
-        "cta_text": "Tell me what is eating your time. I will tell you whether AI can fix it, and how.",
-        "foot_services": "Services",
-        "foot_more": "More services",
+        "cta_text": "Tell me what is eating your time. I will tell you whether AI can fix it, and teach you how.",
+        "foot_services": "Training",
+        "foot_more": "More training",
         "foot_company": "Company",
         "foot_company_links": [
             ("About James Mann, Ph.D.", "/about.html"),
@@ -149,10 +149,10 @@ TEXT = {
             ("English", "/"),
         ],
         "points": [
-            ("Facturas al día", "/invoice-automation-el-paso.html"),
-            ("Llamadas atendidas", "/ai-chatbot-receptionist-el-paso.html"),
-            ("Sitios web", "/website-design-el-paso.html"),
-            ("Soporte técnico", "/it-support-el-paso.html"),
+            ("IA para facturas", "/invoice-automation-el-paso.html"),
+            ("IA para llamadas", "/ai-chatbot-receptionist-el-paso.html"),
+            ("IA para tu sitio web", "/build-a-website-with-ai.html"),
+            ("IA para soporte técnico", "/ai-for-it-help.html"),
         ],
         "hero_more": ("Ver servicios", "/es/#servicios"),
         "demo": {
@@ -223,9 +223,9 @@ TEXT = {
         "learn": "Más información",
         "faq_title": "Preguntas frecuentes.",
         "cta_title": "Empieza con una consulta gratis.",
-        "cta_text": "Cuéntame qué te quita tiempo. Te diré si la inteligencia artificial puede resolverlo, y cómo.",
-        "foot_services": "Servicios",
-        "foot_more": "Más servicios",
+        "cta_text": "Cuéntame qué te quita tiempo. Te diré si la inteligencia artificial puede resolverlo, y te enseñaré cómo.",
+        "foot_services": "Capacitación",
+        "foot_more": "Más capacitación",
         "foot_company": "Empresa",
         "foot_company_links": [
             ("Sobre James Mann, Ph.D.", "/about.html"),
@@ -377,7 +377,7 @@ def structured_data(page, services):
         "url": f"{SITE}/",
         "image": f"{SITE}/assets/og.png",
         "logo": f"{SITE}/assets/apple-touch-icon.png",
-        "description": "Independent AI consulting, automation, chatbots, training and private AI for businesses in El Paso, Texas.",
+        "description": "Hands-on AI training and guided setup for businesses in El Paso, Texas. Clients learn to use AI for invoices, phone answering, automation and more, and run it themselves.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "El Paso",
@@ -391,7 +391,7 @@ def structured_data(page, services):
         "potentialAction": {"@type": "ReserveAction", "name": "Book a free consultation", "target": BOOK},
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "AI services",
+            "name": "AI training",
             "itemListElement": [
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["card"]["title"], "url": SITE + s["url"]}}
                 for s in services
@@ -403,7 +403,7 @@ def structured_data(page, services):
         "@id": f"{SITE}/#james",
         "name": OWNER,
         "honorificSuffix": "Ph.D.",
-        "jobTitle": "AI Consultant",
+        "jobTitle": "AI Trainer and Consultant",
         "url": f"{SITE}/about.html",
         "worksFor": {"@id": f"{SITE}/#business"},
         "alumniOf": {"@type": "CollegeOrUniversity", "name": "Baylor University"},
@@ -577,7 +577,7 @@ def render(page, services):
 <meta property="og:image" content="{SITE}/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{BRAND}: AI consulting, automation and training in El Paso, Texas">
+<meta property="og:image:alt" content="{BRAND}: hands-on AI training for businesses in El Paso, Texas">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.png" sizes="96x96" type="image/png">
