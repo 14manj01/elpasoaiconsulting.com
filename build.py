@@ -21,6 +21,7 @@ SITE = f"https://{DOMAIN}"
 BRAND = "El Paso AI Consulting"
 OWNER = "James Mann"
 BOOK = "https://cal.com/james-mann-kzawdp"
+INDEXNOW_KEY = "84bffaa91e8b3f7d5d0d0872bd2ec92d"  # proves site ownership to IndexNow (Bing and others)
 TODAY = date.today().isoformat()
 
 AREAS = [
@@ -419,6 +420,7 @@ def main():
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8", newline="\n")
     (OUT / "CNAME").write_text(DOMAIN + "\n", encoding="utf-8", newline="\n")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+    (OUT / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
     print(f"Built {len(pages)} pages into {OUT}")
 
 
