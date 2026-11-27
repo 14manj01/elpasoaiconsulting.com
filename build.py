@@ -52,19 +52,69 @@ TEXT = {
             ("Websites built", "/website-design-el-paso.html"),
             ("IT fixed", "/it-support-el-paso.html"),
         ],
+        "hero_more": ("See everything I can automate", "/what-can-ai-automate.html"),
         "demo": {
-            "label": "Example of a morning message from an AI agent to a restaurant owner",
+            "label": "Examples of messages from an AI agent to a business owner",
             "name": "Your AI agent",
-            "time": "Example · 7:02 AM",
-            "msgs": [
-                ("", "Good morning. Three things need you today."),
-                ("", "Two supplier invoices came in overnight. Both are in QuickBooks. Produce is up 12% this month."),
-                ("", "Catering invoice #1042 is 14 days late. I drafted a reminder."),
-                ("me", "Send it."),
-                ("", "Sent. Tonight's special is ready to post in English and Spanish."),
+            "scenes": [
+                {
+                    "tab": "Restaurant",
+                    "time": "Example · 7:02 AM",
+                    "caption": "Example: an AI agent such as Claude Duet or a ChatGPT dot working a restaurant's back office.",
+                    "msgs": [
+                        ("", "Good morning. Three things need you today."),
+                        ("", "Two supplier invoices came in overnight. Both are in QuickBooks. Produce is up 12% this month."),
+                        ("", "Catering invoice #1042 is 14 days late. I drafted a reminder."),
+                        ("me", "Send it."),
+                        ("", "Sent. Reminders stop the moment they pay."),
+                    ],
+                },
+                {
+                    "tab": "Contractor",
+                    "time": "Example · 5:40 PM",
+                    "caption": "Example: an AI receptionist for the calls you cannot take, with an AI agent handling follow-up.",
+                    "msgs": [
+                        ("", "You were on a roof all afternoon. Four calls came in and all four got an answer."),
+                        ("", "Two estimates are booked: Thursday 9 AM and Friday 2 PM."),
+                        ("", "The Mesa Street quote has had no reply in five days. Follow-up drafted."),
+                        ("me", "Send it."),
+                        ("", "Sent. I also asked yesterday's customer for a review."),
+                    ],
+                },
+                {
+                    "tab": "Clinic",
+                    "time": "Example · 8:15 AM",
+                    "caption": "Example: appointment reminders and review replies, with a person approving anything public.",
+                    "msgs": [
+                        ("", "Tomorrow has three unconfirmed appointments. Reminders went out in English and Spanish."),
+                        ("", "Two patients rescheduled by text. The calendar is updated."),
+                        ("", "A two-star review came in last night. I drafted a reply for you to read."),
+                        ("me", "Show me."),
+                        ("", "Here it is. Nothing is posted until you approve it."),
+                    ],
+                },
+                {
+                    "tab": "Office",
+                    "time": "Example · Friday 4:00 PM",
+                    "caption": "Example: an AI agent moving information between your inbox, job list and accounting.",
+                    "msgs": [
+                        ("", "Your Friday report is ready: sales, bookings and expenses on one page."),
+                        ("", "I sorted 86 emails. Four need you today, and the replies are drafted."),
+                        ("", "Three new orders came in by email. Each is now a work order and a draft invoice."),
+                        ("me", "Anything late?"),
+                        ("", "One invoice is 30 days overdue. Want the reminder?"),
+                    ],
+                },
             ],
-            "caption": "An example of what Claude Duet or a ChatGPT dot can do once it is set up for your business.",
         },
+        "ticker": [
+            "Chase overdue invoices", "Answer the calls you miss", "Text back missed callers", "Reply to every new lead",
+            "Follow up on quiet quotes", "Send appointment reminders", "Ask for reviews", "Draft review replies",
+            "Enter supplier bills", "Flag price increases", "Sort the inbox", "Draft the replies",
+            "Turn job notes into estimates", "Move orders into your books", "Build the Friday report", "Track food costs",
+            "Write training manuals", "Post in English and Spanish", "Keep Google hours current", "Rebuild the website",
+            "Fix the Wi-Fi", "Set up backups", "Lock down accounts", "Set up new computers",
+        ],
         "book": "Book a free consultation",
         "book_short": "Book a free consult",
         "all_services": ("All services", "/#services"),
@@ -77,6 +127,7 @@ TEXT = {
         "foot_company": "Company",
         "foot_company_links": [
             ("About James Mann, Ph.D.", "/about.html"),
+            ("What AI can automate", "/what-can-ai-automate.html"),
             ("AI for restaurants", "/ai-for-restaurants-el-paso.html"),
             ("Examples and use cases", "/ai-use-cases-el-paso.html"),
             ("Book a consultation", "/contact.html"),
@@ -103,19 +154,69 @@ TEXT = {
             ("Sitios web", "/website-design-el-paso.html"),
             ("Soporte técnico", "/it-support-el-paso.html"),
         ],
+        "hero_more": ("Ver servicios", "/es/#servicios"),
         "demo": {
-            "label": "Ejemplo de un mensaje matutino de un agente de IA al dueño de un restaurante",
+            "label": "Ejemplos de mensajes de un agente de IA al dueño de un negocio",
             "name": "Tu agente de IA",
-            "time": "Ejemplo · 7:02 a. m.",
-            "msgs": [
-                ("", "Buenos días. Hoy hay tres cosas que necesitan tu atención."),
-                ("", "Anoche llegaron dos facturas de proveedores. Ya están en QuickBooks. Las verduras subieron 12% este mes."),
-                ("", "La factura de banquetes n.º 1042 tiene 14 días de atraso. Preparé un recordatorio."),
-                ("me", "Envíalo."),
-                ("", "Enviado. El especial de hoy está listo para publicarse en inglés y español."),
+            "scenes": [
+                {
+                    "tab": "Restaurante",
+                    "time": "Ejemplo · 7:02 a. m.",
+                    "caption": "Ejemplo: un agente de IA como Claude Duet o un dot de ChatGPT en la administración de un restaurante.",
+                    "msgs": [
+                        ("", "Buenos días. Hoy hay tres cosas que necesitan tu atención."),
+                        ("", "Anoche llegaron dos facturas de proveedores. Ya están en QuickBooks. Las verduras subieron 12% este mes."),
+                        ("", "La factura de banquetes n.º 1042 tiene 14 días de atraso. Preparé un recordatorio."),
+                        ("me", "Envíalo."),
+                        ("", "Enviado. Los recordatorios se detienen en cuanto pagan."),
+                    ],
+                },
+                {
+                    "tab": "Contratista",
+                    "time": "Ejemplo · 5:40 p. m.",
+                    "caption": "Ejemplo: una recepcionista de IA para las llamadas que no puedes tomar y un agente que da seguimiento.",
+                    "msgs": [
+                        ("", "Estuviste en un techo toda la tarde. Entraron cuatro llamadas y las cuatro recibieron respuesta."),
+                        ("", "Hay dos presupuestos agendados: jueves 9 a. m. y viernes 2 p. m."),
+                        ("", "La cotización de la calle Mesa lleva cinco días sin respuesta. Preparé un seguimiento."),
+                        ("me", "Envíalo."),
+                        ("", "Enviado. También le pedí una reseña al cliente de ayer."),
+                    ],
+                },
+                {
+                    "tab": "Consultorio",
+                    "time": "Ejemplo · 8:15 a. m.",
+                    "caption": "Ejemplo: recordatorios de citas y respuestas a reseñas; una persona aprueba todo lo que se publica.",
+                    "msgs": [
+                        ("", "Mañana hay tres citas sin confirmar. Ya salieron los recordatorios en inglés y español."),
+                        ("", "Dos pacientes cambiaron su cita por mensaje. El calendario está actualizado."),
+                        ("", "Anoche llegó una reseña de dos estrellas. Preparé una respuesta para que la leas."),
+                        ("me", "Muéstramela."),
+                        ("", "Aquí está. No se publica nada hasta que la apruebes."),
+                    ],
+                },
+                {
+                    "tab": "Oficina",
+                    "time": "Ejemplo · viernes 4:00 p. m.",
+                    "caption": "Ejemplo: un agente de IA que pasa la información entre tu correo, tu lista de trabajos y tu contabilidad.",
+                    "msgs": [
+                        ("", "Tu reporte del viernes está listo: ventas, reservas y gastos en una página."),
+                        ("", "Ordené 86 correos. Cuatro te necesitan hoy y las respuestas están en borrador."),
+                        ("", "Llegaron tres pedidos por correo. Cada uno ya es una orden de trabajo y una factura en borrador."),
+                        ("me", "¿Hay algo atrasado?"),
+                        ("", "Una factura tiene 30 días de atraso. ¿Envío el recordatorio?"),
+                    ],
+                },
             ],
-            "caption": "Un ejemplo de lo que Claude Duet o un dot de ChatGPT puede hacer una vez configurado para tu negocio.",
         },
+        "ticker": [
+            "Cobrar facturas atrasadas", "Contestar las llamadas perdidas", "Responder a cada cliente nuevo",
+            "Dar seguimiento a cotizaciones", "Enviar recordatorios de citas", "Pedir reseñas",
+            "Capturar facturas de proveedores", "Detectar aumentos de precio", "Ordenar el correo",
+            "Convertir notas en presupuestos", "Hacer el reporte del viernes", "Vigilar el costo de alimentos",
+            "Publicar en inglés y español", "Actualizar horarios en Google", "Renovar el sitio web",
+            "Arreglar el Wi-Fi", "Configurar respaldos", "Proteger las cuentas",
+        ],
         "book": "Reserva una consulta gratis",
         "book_short": "Consulta gratis",
         "all_services": ("Ver servicios", "/es/#servicios"),
@@ -203,15 +304,34 @@ def icon(name):
 
 
 def demo(text):
-    """Phone mock for the home hero: a short example conversation that plays in about five seconds."""
-    messages = "".join(f'<p class="msg{" me" if who else ""}">{line}</p>' for who, line in text["msgs"])
+    """Phone mock for the home hero: example conversations, each playing in about five seconds."""
+    scenes = text["scenes"]
+    first = scenes[0]
+    messages = "".join(f'<p class="msg{" me" if who else ""}">{line}</p>' for who, line in first["msgs"])
+    tabs = "".join(
+        f'<button type="button" role="tab" aria-selected="{"true" if i == 0 else "false"}">{scene["tab"]}</button>'
+        for i, scene in enumerate(scenes)
+    )
+    data = json.dumps(
+        [{"time": s["time"], "caption": s["caption"], "msgs": [list(m) for m in s["msgs"]]} for s in scenes],
+        ensure_ascii=False, separators=(",", ":"),
+    ).replace("</", "<\\/")
     return (
         f'<figure class="demo" aria-label="{text["label"]}">\n<div class="panel">\n<div class="phone">\n'
         f'<div class="phone-top"><span class="avatar">{icon("spark")}</span>'
-        f'<p><b>{text["name"]}</b><small>{text["time"]}</small></p></div>\n'
+        f'<p><b>{text["name"]}</b><small>{first["time"]}</small></p></div>\n'
         f'<div class="chat">{messages}</div>\n</div>\n{RIDGE}\n</div>\n'
-        f'<figcaption>{text["caption"]}</figcaption>\n</figure>'
+        f'<div class="demo-tabs" role="tablist">{tabs}</div>\n'
+        f'<figcaption>{first["caption"]}</figcaption>\n'
+        f'<script type="application/json" id="demo-scenes">{data}</script>\n</figure>'
     )
+
+
+def ticker(items):
+    """Looping strip of tasks; the second copy exists only to make the loop seamless."""
+    first = "".join(f"<li>{item}</li>" for item in items)
+    second = "".join(f'<li aria-hidden="true">{item}</li>' for item in items)
+    return f'<div class="ticker"><ul>{first}{second}</ul></div>'
 
 
 def row_sizes(count):
@@ -375,11 +495,16 @@ def render(page, services):
 
     if page["kind"] in ("home", "es"):
         points = "".join(f'<li><a href="{href}">{label}</a></li>' for label, href in t["points"])
+        more_label, more_href = t["hero_more"]
+        home_actions = (
+            f'<div class="actions"><a class="btn" href="{BOOK}" target="_blank" rel="noopener">{t["book"]}</a>'
+            f'<a class="more" href="{more_href}">{more_label}</a></div>'
+        )
         hero = (
-            '<section class="hero hero-split">\n<div class="wrap hero-grid">\n<div class="hero-copy">\n'
+            '<section class="hero hero-split">\n<div class="wrap">\n<div class="hero-grid">\n<div class="hero-copy">\n'
             f'<h1><span class="eyebrow grad">{page["eyebrow"]}</span>{page["h1"]}</h1>\n'
-            f'<p class="lede">{page["lede"]}</p>\n{actions}\n<ul class="points">{points}</ul>\n</div>\n'
-            f'{demo(t["demo"])}\n</div>\n</section>'
+            f'<p class="lede">{page["lede"]}</p>\n{home_actions}\n<ul class="points">{points}</ul>\n</div>\n'
+            f'{demo(t["demo"])}\n</div>\n{ticker(t["ticker"])}\n</div>\n</section>'
         )
     else:
         crumbs = "" if is_404 else f'<ol class="crumbs"><li><a href="/">Home</a></li><li>{page["crumb"]}</li></ol>'
