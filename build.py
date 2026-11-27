@@ -22,6 +22,7 @@ SITE = f"https://{DOMAIN}"
 BRAND = "El Paso AI Consulting"
 OWNER = "James Mann"
 BOOK = "https://cal.com/james-mann-kzawdp"
+EMAIL = "sales@elpasoaiconsulting.com"
 INDEXNOW_KEY = "84bffaa91e8b3f7d5d0d0872bd2ec92d"  # proves site ownership to IndexNow (Bing and others)
 TODAY = date.today().isoformat()
 
@@ -122,6 +123,7 @@ TEXT = {
         "faq_title": "Questions, answered.",
         "cta_title": "Start with a free consultation.",
         "cta_text": "Tell me what is eating your time. I will tell you whether AI can fix it, and teach you how.",
+        "cta_email": "Prefer email? Write to",
         "foot_services": "Training",
         "foot_more": "More training",
         "foot_company": "Company",
@@ -131,6 +133,7 @@ TEXT = {
             ("AI for restaurants", "/ai-for-restaurants-el-paso.html"),
             ("Examples and use cases", "/ai-use-cases-el-paso.html"),
             ("Book a consultation", "/contact.html"),
+            (EMAIL, f"mailto:{EMAIL}"),
             ("En español", "/es/"),
         ],
         "foot_area": "Service area",
@@ -224,12 +227,14 @@ TEXT = {
         "faq_title": "Preguntas frecuentes.",
         "cta_title": "Empieza con una consulta gratis.",
         "cta_text": "Cuéntame qué te quita tiempo. Te diré si la inteligencia artificial puede resolverlo, y te enseñaré cómo.",
+        "cta_email": "¿Prefieres escribir? Manda un correo a",
         "foot_services": "Capacitación",
         "foot_more": "Más capacitación",
         "foot_company": "Empresa",
         "foot_company_links": [
             ("Sobre James Mann, Ph.D. (en inglés)", "/about.html"),
             ("Reservar una consulta", BOOK),
+            (EMAIL, f"mailto:{EMAIL}"),
             ("In English", "/"),
         ],
         "foot_area": "Zona de servicio",
@@ -388,6 +393,8 @@ def structured_data(page, services):
                        {"@type": "AdministrativeArea", "name": "El Paso County, TX"}],
         "founder": {"@id": f"{SITE}/#james"},
         "knowsLanguage": ["en"],
+        "email": EMAIL,
+        "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "email": EMAIL, "url": BOOK},
         "potentialAction": {"@type": "ReserveAction", "name": "Book a free consultation", "target": BOOK},
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -519,6 +526,7 @@ def render(page, services):
         .replace("{{services}}", services_grid(services, lang))
         .replace("{{areas}}", chips())
         .replace("{{book}}", BOOK)
+        .replace("{{email}}", EMAIL)
     )
     body = re.sub(r"\{\{icon:(\w+)\}\}", lambda match: icon(match.group(1)), body)
 
@@ -549,7 +557,8 @@ def render(page, services):
 
     cta = "" if is_404 else (
         f'<section class="cta-band"><div class="wrap"><div class="cta reveal"><h2>{t["cta_title"]}</h2>'
-        f'<p>{t["cta_text"]}</p><a class="btn" href="{BOOK}" target="_blank" rel="noopener">{t["book"]}</a></div></div></section>'
+        f'<p>{t["cta_text"]}</p><a class="btn" href="{BOOK}" target="_blank" rel="noopener">{t["book"]}</a>'
+        f'<p class="alt">{t["cta_email"]} <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></div></section>'
     )
 
     robots = "noindex" if is_404 else "index, follow, max-image-preview:large"
