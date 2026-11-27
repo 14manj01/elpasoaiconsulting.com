@@ -53,7 +53,7 @@ TEXT = {
             ("AI for your website", "/build-a-website-with-ai.html"),
             ("AI for IT help", "/ai-for-it-help.html"),
         ],
-        "hero_more": ("See 65 things AI can do", "/what-can-ai-automate.html"),
+        "hero_more": ("See 72 things AI can do", "/what-can-ai-automate.html"),
         "demo": {
             "label": "Examples of messages from an AI agent to a business owner",
             "name": "Your AI agent",
@@ -111,6 +111,7 @@ TEXT = {
         "ticker": [
             "Chase overdue invoices", "Answer the calls you miss", "Text back missed callers", "Reply to every new lead",
             "Follow up on quiet quotes", "Send appointment reminders", "Ask for reviews", "Draft review replies",
+            "Sort the resumes", "Build the shift schedule", "Fill open shifts", "Reply to every applicant",
             "Enter supplier bills", "Flag price increases", "Sort the inbox", "Draft the replies",
             "Turn job notes into estimates", "Move orders into your books", "Build the Friday report", "Track food costs",
             "Write training manuals", "Post in English and Spanish", "Keep Google hours current", "Update your website",
@@ -215,6 +216,7 @@ TEXT = {
         "ticker": [
             "Cobrar facturas atrasadas", "Contestar las llamadas perdidas", "Responder a cada cliente nuevo",
             "Dar seguimiento a cotizaciones", "Enviar recordatorios de citas", "Pedir reseñas",
+            "Ordenar currículums", "Armar los turnos de la semana", "Cubrir turnos vacantes",
             "Capturar facturas de proveedores", "Detectar aumentos de precio", "Ordenar el correo",
             "Convertir notas en presupuestos", "Hacer el reporte del viernes", "Vigilar el costo de alimentos",
             "Publicar en inglés y español", "Actualizar horarios en Google", "Actualizar tu sitio web",
@@ -260,6 +262,7 @@ ICONS = {
     "receipt": '<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>',
     "window": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9.5h18M6.5 7.3h.01M9 7.3h.01"/>',
     "wrench": '<path d="M20 7.5a4.5 4.5 0 0 1-6.2 4.2L7 18.5A1.8 1.8 0 0 1 4.5 16l6.8-6.8A4.5 4.5 0 0 1 17 3.5L14.5 6l1 2.5 2.5 1z"/>',
+    "people": '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M18 14.3c1.8.8 3 2.6 3 4.7"/>',
 }
 
 RIDGE = """<svg class="ridge" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
