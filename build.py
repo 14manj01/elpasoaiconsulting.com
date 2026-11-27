@@ -6,6 +6,7 @@ Each page is a file in src/: a JSON header inside the first <!-- --> comment,
 followed by the page body. The header keys are read in render() below.
 CSS, JS and images live in docs/assets and are not generated.
 """
+import hashlib
 import html
 import json
 import re
@@ -159,6 +160,12 @@ RIDGE = """<svg class="ridge" viewBox="0 0 1200 300" preserveAspectRatio="xMidYM
 <path fill="#2a1242" fill-opacity=".75" d="M0 300V170l90-46 80 40 110-92 90 70 120-58 100 84 130-96 110 78 100-52 120 70 150-40v172z"/>
 <path fill="#05060f" d="M0 300v-90l70-30 60 22 90-70 55 34 85-96 60 48 70-28 80 74 75-52 95 60 70-88 62 46 88-20 80 62 60-30 100 58v100z"/>
 </svg>"""
+
+
+def asset(name):
+    """Asset URL with a content hash, so browsers never pair new pages with a cached old stylesheet."""
+    digest = hashlib.sha1((OUT / "assets" / name).read_bytes()).hexdigest()[:8]
+    return f"/assets/{name}?v={digest}"
 
 
 def esc(text):
@@ -450,9 +457,9 @@ def render(page, services):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="{asset("style.css")}">
 <script type="application/ld+json">{structured_data(page, services)}</script>
-<script src="/assets/main.js" defer></script>
+<script src="{asset("main.js")}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">{t["skip"]}</a>
