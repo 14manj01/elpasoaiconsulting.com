@@ -12,7 +12,7 @@
   }
 
   var rot = document.querySelector(".rot");
-  if (rot && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (rot) {
     var words = rot.getAttribute("data-words").split("|");
     var index = 0;
     setInterval(function () {
