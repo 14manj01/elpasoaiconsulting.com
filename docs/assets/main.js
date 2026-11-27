@@ -11,6 +11,20 @@
     });
   }
 
+  var rot = document.querySelector(".rot");
+  if (rot && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var words = rot.getAttribute("data-words").split("|");
+    var index = 0;
+    setInterval(function () {
+      rot.classList.add("out");
+      setTimeout(function () {
+        index = (index + 1) % words.length;
+        rot.textContent = words[index];
+        rot.classList.remove("out");
+      }, 300);
+    }, 2200);
+  }
+
   var items = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
     items.forEach(function (el) { el.classList.add("in"); });
