@@ -25,6 +25,42 @@
     }, 2200);
   }
 
+  // Home hero: cycle through the example conversations, or jump to one from its tab.
+  var sceneData = document.getElementById("demo-scenes");
+  var chat = document.querySelector(".chat");
+  if (sceneData && chat) {
+    var scenes = JSON.parse(sceneData.textContent);
+    var tabs = document.querySelectorAll(".demo-tabs button");
+    var stamp = document.querySelector(".phone-top small");
+    var caption = document.querySelector(".demo figcaption");
+    var current = 0;
+    var timer;
+    var show = function (next) {
+      current = next;
+      chat.textContent = "";
+      scenes[next].msgs.forEach(function (message) {
+        var bubble = document.createElement("p");
+        bubble.className = message[0] ? "msg me" : "msg";
+        bubble.textContent = message[1];
+        chat.appendChild(bubble);
+      });
+      stamp.textContent = scenes[next].time;
+      caption.textContent = scenes[next].caption;
+      tabs.forEach(function (tab, n) { tab.setAttribute("aria-selected", String(n === next)); });
+    };
+    var cycle = function () {
+      timer = setInterval(function () { show((current + 1) % scenes.length); }, 9000);
+    };
+    tabs.forEach(function (tab, n) {
+      tab.addEventListener("click", function () {
+        clearInterval(timer);
+        show(n);
+        cycle();
+      });
+    });
+    cycle();
+  }
+
   var items = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
     items.forEach(function (el) { el.classList.add("in"); });
