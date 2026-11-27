@@ -36,15 +36,34 @@ TEXT = {
         "skip": "Skip to content",
         "menu": "Menu",
         "nav": [
-            ("Services", "/#services"),
-            ("Consulting", "/ai-consulting-el-paso.html"),
-            ("Automation", "/ai-automation-el-paso.html"),
-            ("Chatbots", "/ai-chatbot-receptionist-el-paso.html"),
-            ("Training", "/ai-training-el-paso.html"),
+            ("Invoices", "/invoice-automation-el-paso.html"),
+            ("Websites", "/website-design-el-paso.html"),
+            ("IT support", "/it-support-el-paso.html"),
+            ("AI agents", "/ai-agent-setup-el-paso.html"),
+            ("Restaurants", "/ai-for-restaurants-el-paso.html"),
             ("Examples", "/ai-use-cases-el-paso.html"),
             ("About", "/about.html"),
             ("Español", "/es/"),
         ],
+        "points": [
+            ("Invoices chased", "/invoice-automation-el-paso.html"),
+            ("Phones answered", "/ai-chatbot-receptionist-el-paso.html"),
+            ("Websites built", "/website-design-el-paso.html"),
+            ("IT fixed", "/it-support-el-paso.html"),
+        ],
+        "demo": {
+            "label": "Example of a morning message from an AI agent to a restaurant owner",
+            "name": "Your AI agent",
+            "time": "Example · 7:02 AM",
+            "msgs": [
+                ("", "Good morning. Three things need you today."),
+                ("", "Two supplier invoices came in overnight. Both are in QuickBooks. Produce is up 12% this month."),
+                ("", "Catering invoice #1042 is 14 days late. I drafted a reminder."),
+                ("me", "Send it."),
+                ("", "Sent. Tonight's special is ready to post in English and Spanish."),
+            ],
+            "caption": "An example of what Claude Duet or a ChatGPT dot can do once it is set up for your business.",
+        },
         "book": "Book a free consultation",
         "book_short": "Book a free consult",
         "all_services": ("All services", "/#services"),
@@ -57,6 +76,7 @@ TEXT = {
         "foot_company": "Company",
         "foot_company_links": [
             ("About James Mann, Ph.D.", "/about.html"),
+            ("AI for restaurants", "/ai-for-restaurants-el-paso.html"),
             ("Examples and use cases", "/ai-use-cases-el-paso.html"),
             ("Book a consultation", "/contact.html"),
             ("En español", "/es/"),
@@ -76,6 +96,25 @@ TEXT = {
             ("Sobre mí", "/about.html"),
             ("English", "/"),
         ],
+        "points": [
+            ("Facturas al día", "/invoice-automation-el-paso.html"),
+            ("Llamadas atendidas", "/ai-chatbot-receptionist-el-paso.html"),
+            ("Sitios web", "/website-design-el-paso.html"),
+            ("Soporte técnico", "/it-support-el-paso.html"),
+        ],
+        "demo": {
+            "label": "Ejemplo de un mensaje matutino de un agente de IA al dueño de un restaurante",
+            "name": "Tu agente de IA",
+            "time": "Ejemplo · 7:02 a. m.",
+            "msgs": [
+                ("", "Buenos días. Hoy hay tres cosas que necesitan tu atención."),
+                ("", "Anoche llegaron dos facturas de proveedores. Ya están en QuickBooks. Las verduras subieron 12% este mes."),
+                ("", "La factura de banquetes n.º 1042 tiene 14 días de atraso. Preparé un recordatorio."),
+                ("me", "Envíalo."),
+                ("", "Enviado. El especial de hoy está listo para publicarse en inglés y español."),
+            ],
+            "caption": "Un ejemplo de lo que Claude Duet o un dot de ChatGPT puede hacer una vez configurado para tu negocio.",
+        },
         "book": "Reserva una consulta gratis",
         "book_short": "Consulta gratis",
         "all_services": ("Ver servicios", "/es/#servicios"),
@@ -111,18 +150,15 @@ ICONS = {
     "agent": '<rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 8V4.5M9.5 13h.01M14.5 13h.01M3 13h2M19 13h2"/><circle cx="12" cy="3.5" r="1"/>',
     "dots": '<circle cx="5.5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="18.5" cy="12" r="2.2"/>',
     "duet": '<circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/>',
+    "receipt": '<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>',
+    "window": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9.5h18M6.5 7.3h.01M9 7.3h.01"/>',
+    "wrench": '<path d="M20 7.5a4.5 4.5 0 0 1-6.2 4.2L7 18.5A1.8 1.8 0 0 1 4.5 16l6.8-6.8A4.5 4.5 0 0 1 17 3.5L14.5 6l1 2.5 2.5 1z"/>',
 }
 
-SKYLINE = """<div class="skyline reveal" role="img" aria-label="{label}">
-<p>El Paso, Texas</p>
-<svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-<defs><radialGradient id="glow"><stop offset="0" stop-color="#fff3c4" stop-opacity=".9"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient></defs>
+RIDGE = """<svg class="ridge" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
 <path fill="#2a1242" fill-opacity=".75" d="M0 300V170l90-46 80 40 110-92 90 70 120-58 100 84 130-96 110 78 100-52 120 70 150-40v172z"/>
 <path fill="#05060f" d="M0 300v-90l70-30 60 22 90-70 55 34 85-96 60 48 70-28 80 74 75-52 95 60 70-88 62 46 88-20 80 62 60-30 100 58v100z"/>
-<circle cx="372" cy="128" r="26" fill="url(#glow)"/>
-<path fill="#fff7d6" d="m372 118 2.35 6.76 7.16.15-5.71 4.33 2.08 6.85-5.88-4.09-5.88 4.09 2.08-6.85-5.71-4.33 7.16-.15z"/>
-</svg>
-</div>"""
+</svg>"""
 
 
 def esc(text):
@@ -156,6 +192,18 @@ def icon(name):
     return (
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
         f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS[name]}</svg>'
+    )
+
+
+def demo(text):
+    """Phone mock for the home hero: a short example conversation that plays in about five seconds."""
+    messages = "".join(f'<p class="msg{" me" if who else ""}">{line}</p>' for who, line in text["msgs"])
+    return (
+        f'<figure class="demo" aria-label="{text["label"]}">\n<div class="panel">\n<div class="phone">\n'
+        f'<div class="phone-top"><span class="avatar">{icon("spark")}</span>'
+        f'<p><b>{text["name"]}</b><small>{text["time"]}</small></p></div>\n'
+        f'<div class="chat">{messages}</div>\n</div>\n{RIDGE}\n</div>\n'
+        f'<figcaption>{text["caption"]}</figcaption>\n</figure>'
     )
 
 
@@ -312,16 +360,27 @@ def render(page, services):
             f'<link rel="alternate" hreflang="x-default" href="{SITE}/">\n'
         )
 
-    crumbs = ""
-    if page["kind"] not in ("home", "es", "404"):
-        crumbs = f'<ol class="crumbs"><li><a href="/">Home</a></li><li>{page["crumb"]}</li></ol>'
-
     second_label, second_href = t["all_services"]
-    hero_extra = SKYLINE.format(label="Sunset over the Franklin Mountains with the Star on the Mountain") if page["kind"] in ("home", "es") else ""
     actions = "" if is_404 else (
         f'<div class="actions"><a class="btn" href="{BOOK}" target="_blank" rel="noopener">{t["book"]}</a>'
         f'<a class="more" href="{second_href}">{second_label}</a></div>'
     )
+
+    if page["kind"] in ("home", "es"):
+        points = "".join(f'<li><a href="{href}">{label}</a></li>' for label, href in t["points"])
+        hero = (
+            '<section class="hero hero-split">\n<div class="wrap hero-grid">\n<div class="hero-copy">\n'
+            f'<h1><span class="eyebrow grad">{page["eyebrow"]}</span>{page["h1"]}</h1>\n'
+            f'<p class="lede">{page["lede"]}</p>\n{actions}\n<ul class="points">{points}</ul>\n</div>\n'
+            f'{demo(t["demo"])}\n</div>\n</section>'
+        )
+    else:
+        crumbs = "" if is_404 else f'<ol class="crumbs"><li><a href="/">Home</a></li><li>{page["crumb"]}</li></ol>'
+        hero = (
+            f'<section class="hero">\n<div class="wrap">\n{crumbs}\n<p class="eyebrow grad">{page["eyebrow"]}</p>\n'
+            f'<h1>{page["h1"]}</h1>\n<p class="lede">{page["lede"]}</p>\n{actions}\n</div>\n</section>'
+        )
+    sticky = "" if is_404 else f'<a class="sticky-cta" href="{BOOK}" target="_blank" rel="noopener">{t["book"]}</a>'
 
     body = (
         page["body"]
@@ -329,6 +388,7 @@ def render(page, services):
         .replace("{{areas}}", chips())
         .replace("{{book}}", BOOK)
     )
+    body = re.sub(r"\{\{icon:(\w+)\}\}", lambda match: icon(match.group(1)), body)
 
     # Generated sections continue the light/grey alternation of the page body.
     body_sections = re.findall(r'<section class="section( alt)?"', body)
@@ -405,21 +465,13 @@ def render(page, services):
 </div>
 </header>
 <main id="main">
-<section class="hero">
-<div class="wrap">
-{crumbs}
-<p class="eyebrow grad">{page["eyebrow"]}</p>
-<h1>{page["h1"]}</h1>
-<p class="lede">{page["lede"]}</p>
-{actions}
-{hero_extra}
-</div>
-</section>
+{hero}
 {body}
 {examples}
 {faq}
 {cta}
 </main>
+{sticky}
 <footer class="footer">
 <div class="wrap">
 <div class="footer-cols">
